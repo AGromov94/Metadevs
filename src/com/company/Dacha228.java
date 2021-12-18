@@ -6,7 +6,7 @@ public class Dacha228 {
     public static void main(String[] args) {
         //вывод в консоль фразы Hell YEAH
     /*System.out.println("Hell YEAH");*/
-    int value1=0;
+    int value1=0;//такой вот коммент
     int value2=5;
     int sum=value1+value2;
     System.out.println("Сумма "+sum);
