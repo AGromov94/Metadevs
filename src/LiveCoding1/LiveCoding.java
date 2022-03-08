@@ -9,12 +9,12 @@ public class LiveCoding {
         int userInput;
 
         System.out.println("Please, enter the first variable");
-        value1 = checkInt();
+        value1 = inputValidation();
         System.out.println("Please, enter the second variable");
-        value2 = checkInt();
+        value2 = inputValidation();
         System.out.println("\nPlease, enter the number of operation:");
         System.out.printf("1 - Addition%n2 - Subtraction%n3 - Multiplication\n\n");
-        userInput = checkInt();
+        userInput = inputValidation();
 
             switch (userInput) {
                 case 1:
@@ -33,7 +33,7 @@ public class LiveCoding {
         }
     }
 
-    public static int checkInt() {
+    public static int inputValidation() {
         while (!sc.hasNextInt()) {
             System.out.println("Вы ввели не число");
             sc.next();
