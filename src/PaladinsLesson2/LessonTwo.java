@@ -3,12 +3,16 @@ package PaladinsLesson2;
 import java.util.Scanner;
 
 public class LessonTwo {
-    static Scanner scanner = new Scanner(System.in);
-    static int a, b;
-    static boolean statement;
+    public static Scanner scanner = new Scanner(System.in);
+    public static int a, b;
+    public static boolean statement;
 
     public static void main(String[] args) {
         System.out.println("Введите переменную");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
+            scanner.next();
+        }
         int value = scanner.nextInt();
         if (value > 10) {
             System.out.println("Число больше 10");
@@ -40,13 +44,19 @@ public class LessonTwo {
         int value1, value2;
         boolean statement1, statement2;
         System.out.println("Введите первое число ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
+            scanner.next();
+        }
         value1 = scanner.nextInt();
         System.out.println("Введите второе число ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
+            scanner.next();
+        }
         value2 = scanner.nextInt();
         statement1 = value1 > value2;
         statement2 = value1 < value2;
-        /* В формулировке условий в задании присутствует ошибки, по этому
-        я позволил себе немного их откорректировать */
         if (statement1) {
             System.out.println("Первое введенное число больше второго");
         } else if (statement2) {
@@ -86,6 +96,10 @@ public class LessonTwo {
 
     static void methodFive() {
         System.out.println("Введите значение а");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
+            scanner.next();
+        }
         a = scanner.nextInt();
         b = 90;
         statement = a == b;
@@ -95,6 +109,10 @@ public class LessonTwo {
     static void methodSix() {
         a = 100;
         System.out.println("Введите значение b");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
+            scanner.next();
+        }
         b = scanner.nextInt();
         statement = a < b;
         if (statement) {
@@ -105,6 +123,10 @@ public class LessonTwo {
     static void methodSeven() {
         b = 60;
         System.out.println("Введите значение а");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
+            scanner.next();
+        }
         a = scanner.nextInt() + b / 2;
         statement = a == b;
         if (statement) {
@@ -114,6 +136,10 @@ public class LessonTwo {
 
     static void methodEight() {
         System.out.println("Введите значение а");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
+            scanner.next();
+        }
         b = 146;
         a = scanner.nextInt() + b / 2;
         statement = a == b;
