@@ -8,8 +8,16 @@ public class LessonOne {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите 1 переменную:");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введите целое число");
+            scanner.next();
+        }
         value1 = scanner.nextInt();
         System.out.println("Введите 2 переменную:");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введите целое число");
+            scanner.next();
+        }
         value2 = scanner.nextInt();
 
         int sum = value1 + value2;
