@@ -11,6 +11,10 @@ public class Task3 {
         int length;
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите длину массива");
+        while (!scan.hasNextInt()) {
+            System.out.println("Требуется ввести целочисленное значение");
+            scan.next();
+        }
         length = scan.nextInt();
         scan.nextLine();
         String[] araiV1 = new String[length];

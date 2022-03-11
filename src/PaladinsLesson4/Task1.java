@@ -7,6 +7,10 @@ public class Task1 {
         int UserInput;
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите число");
+        while (!scan.hasNextInt()) {
+            System.out.println("Это не число, попробуйте еще раз");
+            scan.next();
+        }
         UserInput = scan.nextInt();
         int factorial = factorialCalculation(UserInput);
         System.out.println(UserInput + "!= " + factorial);

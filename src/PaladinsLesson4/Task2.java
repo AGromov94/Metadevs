@@ -12,8 +12,16 @@ public class Task2 {
         int lowLimit;
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите верхнюю границу диапазона");
+        while (!scan.hasNextInt()) {
+            System.out.println("Граница должна быть числом, попробуйте еще раз");
+            scan.next();
+        }
         upperLimit = scan.nextInt();
         System.out.println("Введите нижнюю границу диапазона");
+        while (!scan.hasNextInt()) {
+            System.out.println("Граница должна быть числом, попробуйте еще раз");
+            scan.next();
+        }
         lowLimit = scan.nextInt();
         for (int i = lowLimit; i <= upperLimit; i++) {
             if (i % 2 == 0) {
