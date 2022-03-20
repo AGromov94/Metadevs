@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         int a = 7;
         int b = 8;
-        sum(a, b);
-        sum(3, a);
-        sum(5, 23);
+        printSum(a, b);
+        printSum(3, a);
+        printSum(5, 23);
 
         boolean aGreaterThenB = a > b;
         boolean aLessThenB = a < b;
@@ -51,7 +51,7 @@ public class Main {
         }
     }
 
-    static void sum(int x, int y) {
+    static void printSum(int x, int y) {
         int z = (x + y);
         System.out.println(z);
     }
