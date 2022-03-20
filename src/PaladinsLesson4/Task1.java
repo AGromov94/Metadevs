@@ -5,13 +5,8 @@ import java.util.Scanner;
 public class Task1 {
     public static void main(String[] args) {
         int UserInput;
-        Scanner scan = new Scanner(System.in);
         System.out.println("Введите число");
-        while (!scan.hasNextInt()) {
-            System.out.println("Это не число, попробуйте еще раз");
-            scan.next();
-        }
-        UserInput = scan.nextInt();
+        UserInput = inputWithValidation();
         int factorial = factorialCalculation(UserInput);
         System.out.println(UserInput + "!= " + factorial);
     }
@@ -23,5 +18,14 @@ public class Task1 {
             result = result * i;
         }
         return result;
+    }
+
+    public static int inputWithValidation() {
+        Scanner scan = new Scanner(System.in);
+        while (!scan.hasNextInt()) {
+            System.out.println("Требуется ввести целочисленное значение");
+            scan.next();
+        }
+        return scan.nextInt();
     }
 }

@@ -10,23 +10,23 @@ public class Task2 {
     public static void outputOfEvenNumbers() {
         int upperLimit;
         int lowLimit;
-        Scanner scan = new Scanner(System.in);
         System.out.println("Введите верхнюю границу диапазона");
-        while (!scan.hasNextInt()) {
-            System.out.println("Граница должна быть числом, попробуйте еще раз");
-            scan.next();
-        }
-        upperLimit = scan.nextInt();
+        upperLimit = inputWithValidation();
         System.out.println("Введите нижнюю границу диапазона");
-        while (!scan.hasNextInt()) {
-            System.out.println("Граница должна быть числом, попробуйте еще раз");
-            scan.next();
-        }
-        lowLimit = scan.nextInt();
+        lowLimit = inputWithValidation();
         for (int i = lowLimit; i <= upperLimit; i++) {
             if (i % 2 == 0) {
                 System.out.println(i);
             }
         }
+    }
+
+    public static int inputWithValidation() {
+        Scanner scan = new Scanner(System.in);
+        while (!scan.hasNextInt()) {
+            System.out.println("Требуется ввести целочисленное значение");
+            scan.next();
+        }
+        return scan.nextInt();
     }
 }
