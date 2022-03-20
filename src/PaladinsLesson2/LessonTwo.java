@@ -3,17 +3,12 @@ package PaladinsLesson2;
 import java.util.Scanner;
 
 public class LessonTwo {
-    public static Scanner scanner = new Scanner(System.in);
     public static int a, b;
     public static boolean statement;
 
     public static void main(String[] args) {
         System.out.println("Введите переменную");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
-            scanner.next();
-        }
-        int value = scanner.nextInt();
+        int value = inputWithValidation();
         if (value > 10) {
             System.out.println("Число больше 10");
         } else {
@@ -31,6 +26,7 @@ public class LessonTwo {
 
         String answer;
         String catStandardSound = "мяу";
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Что говорит кошка?");
         scanner.nextLine();
         answer = scanner.nextLine();
@@ -44,17 +40,9 @@ public class LessonTwo {
         int value1, value2;
         boolean statement1, statement2;
         System.out.println("Введите первое число ");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
-            scanner.next();
-        }
-        value1 = scanner.nextInt();
+        value1 = inputWithValidation();
         System.out.println("Введите второе число ");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
-            scanner.next();
-        }
-        value2 = scanner.nextInt();
+        value2 = inputWithValidation();
         statement1 = value1 > value2;
         statement2 = value1 < value2;
         if (statement1) {
@@ -96,11 +84,7 @@ public class LessonTwo {
 
     static void methodFive() {
         System.out.println("Введите значение а");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
-            scanner.next();
-        }
-        a = scanner.nextInt();
+        a = inputWithValidation();
         b = 90;
         statement = a == b;
         System.out.println(statement);
@@ -109,11 +93,7 @@ public class LessonTwo {
     static void methodSix() {
         a = 100;
         System.out.println("Введите значение b");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
-            scanner.next();
-        }
-        b = scanner.nextInt();
+        b = inputWithValidation();
         statement = a < b;
         if (statement) {
             System.out.println(statement);
@@ -123,11 +103,7 @@ public class LessonTwo {
     static void methodSeven() {
         b = 60;
         System.out.println("Введите значение а");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
-            scanner.next();
-        }
-        a = scanner.nextInt() + b / 2;
+        a = inputWithValidation() + b / 2;
         statement = a == b;
         if (statement) {
             System.out.println(statement);
@@ -136,15 +112,20 @@ public class LessonTwo {
 
     static void methodEight() {
         System.out.println("Введите значение а");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Введено не целочисленное значение, попробуйте еще раз");
-            scanner.next();
-        }
         b = 146;
-        a = scanner.nextInt() + b / 2;
+        a = inputWithValidation() + b / 2;
         statement = a == b;
         if (statement) {
             System.out.println(statement);
         }
+    }
+
+    public static int inputWithValidation() {
+        Scanner scanner = new Scanner(System.in);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Вы ввели не число");
+            scanner.next();
+        }
+        return scanner.nextInt();
     }
 }
