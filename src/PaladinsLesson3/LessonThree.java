@@ -33,17 +33,9 @@ public class LessonThree {
         int number, i;
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите значение number");
-        while (!scan.hasNextInt()) {
-            System.out.println("Это не число, попробуйте еще раз");
-            scan.next();
-        }
-        number = scan.nextInt();
+        number = inputWithValidation();
         System.out.println("Введите значение i");
-        while (!scan.hasNextInt()) {
-            System.out.println("Это не число, попробуйте еще раз");
-            scan.next();
-        }
-        i = scan.nextInt();
+        i = inputWithValidation();
         if (number < i) {
             for (int j = number; j < i; j++) {
                 System.out.println("Любая фраза");
@@ -73,6 +65,15 @@ public class LessonThree {
 
     public static void compareWithZeroAndFive(int a) {
         System.out.println((a > 0 && a < 5) ? ("Верно") : ("Неверно"));
+    }
+
+    public static int inputWithValidation() {
+        Scanner scan = new Scanner(System.in);
+        while (!scan.hasNextInt()) {
+            System.out.println("It's not an integer, try again");
+            scan.next();
+        }
+        return scan.nextInt();
     }
 }
 
