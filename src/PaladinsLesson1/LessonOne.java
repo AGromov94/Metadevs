@@ -29,7 +29,7 @@ public class LessonOne {
         System.out.println("Введите фамилию");
         lastName = scanner.nextLine();
         System.out.println("Введите возраст");
-        age = scanner.nextInt();
+        age = inputWithValidation();
         System.out.println("Фамилия " + lastName);
         System.out.println("Имя " + firstName);
         System.out.println("Возраст " + age);
