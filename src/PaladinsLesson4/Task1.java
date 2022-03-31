@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
-        int UserInput;
+        int userInput;
         System.out.println("Введите число");
-        UserInput = inputWithValidation();
-        int factorial = factorialCalculation(UserInput);
-        System.out.println(UserInput + "!= " + factorial);
+        userInput = inputWithValidation();
+        int factorial = factorialCalculation(userInput);
+        System.out.println(userInput + "!= " + factorial);
     }
 
     public static int factorialCalculation(int UserInput) {
