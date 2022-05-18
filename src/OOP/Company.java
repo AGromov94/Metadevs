@@ -2,17 +2,18 @@ package OOP;
 
 import java.util.Arrays;
 
-public class Company {
+public class Company implements IdealCompany {
     private String name;
-    private Worker[] workers;
+    private Employee[] workers;
 
     public Company(String name, int amountOfWorkers) {
         this.name = name;
-        this.workers = new Worker[amountOfWorkers];
+        this.workers = new Employee[amountOfWorkers];
     }
 
-    public void hire(Worker worker) {
-        Worker[] hireArray = new Worker[workers.length + 1];
+    @Override
+    public void hire(Employee worker) {
+        Employee[] hireArray = new Employee[workers.length + 1];
         for (int i = 0; i < workers.length; i++) {
             if (workers[i] == null) {
                 workers[i] = worker;
@@ -24,15 +25,17 @@ public class Company {
         workers = hireArray;
     }
 
-    public void fire(Worker worker) {
+    @Override
+    public void fire(Employee worker) {
         int deleteIndex = Arrays.asList(workers).indexOf(worker);
-        Worker[] fireArray = new Worker[workers.length - 1];
+        Employee[] fireArray = new Employee[workers.length - 1];
         System.arraycopy(workers, 0, fireArray, 0, deleteIndex);
         System.arraycopy(workers, deleteIndex + 1, fireArray, deleteIndex, workers.length - 1 - deleteIndex);
 
         workers = fireArray;
     }
 
+    @Override
     public void printWorkers() {
         for (int i = 0; i < workers.length; i++) {
             System.out.print(workers[i].getName());

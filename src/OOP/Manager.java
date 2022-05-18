@@ -1,12 +1,12 @@
 package OOP;
 
-public class Worker implements Employee {
+public class Manager implements Employee {
     private String name;
     private int age;
     private double salary;
     private String placeOfWork;
 
-    public Worker(String name, int age, double salary) {
+    public Manager(String name, int age, double salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
@@ -44,18 +44,10 @@ public class Worker implements Employee {
     public void setPlaceOfWork(String placeOfWork) {
         this.placeOfWork = placeOfWork;
     }
+
     // endregion
-
-    public boolean checkSalary() {
-        return salary > age;
-    }
-
-    public void salaryValidate() throws Exception {
-        if (checkSalary() == false) throw new Exception("Данные неверны");
-    }
-
     @Override
     public void talkAbout() {
-        System.out.println("I'm a worker");
+        System.out.println("I'm a manager");
     }
 }
