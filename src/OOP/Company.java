@@ -4,40 +4,40 @@ import java.util.Arrays;
 
 public class Company implements IdealCompany {
     private String name;
-    private Employee[] workers;
+    private Employee[] employees;
 
     public Company(String name, int amountOfWorkers) {
         this.name = name;
-        this.workers = new Employee[amountOfWorkers];
+        this.employees = new Employee[amountOfWorkers];
     }
 
     @Override
     public void hire(Employee worker) {
-        Employee[] hireArray = new Employee[workers.length + 1];
-        for (int i = 0; i < workers.length; i++) {
-            if (workers[i] == null) {
-                workers[i] = worker;
+        Employee[] hireArray = new Employee[employees.length + 1];
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] == null) {
+                employees[i] = worker;
                 return;
             }
-            hireArray[i] = workers[i];
+            hireArray[i] = employees[i];
         }
-        hireArray[workers.length] = worker;
-        workers = hireArray;
+        hireArray[employees.length] = worker;
+        employees = hireArray;
     }
 
     @Override
     public void fire(Employee worker) {
-        int deleteIndex = Arrays.asList(workers).indexOf(worker);
-        Employee[] fireArray = new Employee[workers.length - 1];
-        System.arraycopy(workers, 0, fireArray, 0, deleteIndex);
-        System.arraycopy(workers, deleteIndex + 1, fireArray, deleteIndex, workers.length - 1 - deleteIndex);
+        int deleteIndex = Arrays.asList(employees).indexOf(worker);
+        Employee[] fireArray = new Employee[employees.length - 1];
+        System.arraycopy(employees, 0, fireArray, 0, deleteIndex);
+        System.arraycopy(employees, deleteIndex + 1, fireArray, deleteIndex, employees.length - 1 - deleteIndex);
 
-        workers = fireArray;
+        employees = fireArray;
     }
 
     @Override
     public void printEmployees() {
-        for (Employee worker : workers) {
+        for (Employee worker : employees) {
             worker.printPersonalInfo();
             System.out.println();
         }
