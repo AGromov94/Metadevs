@@ -5,5 +5,5 @@ public interface IdealCompany {
 
     void fire(Employee worker);
 
-    void printWorkers();
+    void printEmployees();
 }

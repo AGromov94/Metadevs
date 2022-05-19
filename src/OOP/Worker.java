@@ -55,7 +55,10 @@ public class Worker implements Employee {
     }
 
     @Override
-    public void talkAbout() {
-        System.out.println("I'm a worker");
+    public void printPersonalInfo() {
+        System.out.print("I'm a worker" + " ");
+        System.out.print(this.name);
+        System.out.print(" " + this.age + " ");
+        System.out.printf("%.2f", this.salary);
     }
 }

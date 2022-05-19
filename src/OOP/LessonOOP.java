@@ -17,9 +17,7 @@ public class LessonOOP {
         simaland.hire(misha);
         simaland.fire(misha);
         simaland.fire(anton);
-        simaland.printWorkers();
-        sasha.talkAbout();
-        fedor.talkAbout();
+        simaland.printEmployees();
         fedor.haveVacation();
     }
 }

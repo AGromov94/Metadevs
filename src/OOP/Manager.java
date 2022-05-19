@@ -46,8 +46,12 @@ public class Manager implements Employee {
     }
 
     // endregion
+
     @Override
-    public void talkAbout() {
-        System.out.println("I'm a manager");
+    public void printPersonalInfo() {
+        System.out.print("I'm a manager" + " ");
+        System.out.print(this.name);
+        System.out.print(" " + this.age + " ");
+        System.out.printf("%.2f", this.salary);
     }
 }

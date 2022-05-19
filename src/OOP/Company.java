@@ -36,11 +36,9 @@ public class Company implements IdealCompany {
     }
 
     @Override
-    public void printWorkers() {
-        for (int i = 0; i < workers.length; i++) {
-            System.out.print(workers[i].getName());
-            System.out.print(" " + workers[i].getAge() + " ");
-            System.out.printf("%.2f", workers[i].getSalary());
+    public void printEmployees() {
+        for (Employee worker : workers) {
+            worker.printPersonalInfo();
             System.out.println();
         }
     }
