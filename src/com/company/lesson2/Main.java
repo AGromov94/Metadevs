@@ -1,0 +1,58 @@
+package com.company.lesson2;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 7;
+        int b = 8;
+        printSum(a, b);
+        printSum(3, a);
+        printSum(5, 23);
+
+        boolean aGreaterThenB = a > b;
+        boolean aLessThenB = a < b;
+        boolean aGreaterOrEqualThenB = a >= b;
+        boolean aLessOrEqualThenB = a <= b;
+
+        if (aGreaterThenB) {
+            System.out.println("a > b");
+        } else {
+            System.out.println("a <= b");
+            if (aLessThenB) {
+                System.out.println("a < b");
+            }
+
+            if (aGreaterOrEqualThenB) {
+                System.out.println("a >= b");
+            } else {
+                System.out.println("a < b");
+            }
+
+            if (aLessOrEqualThenB) {
+                System.out.println("a <= b");
+            } else {
+                System.out.println("a > b");
+            }
+        }
+
+        System.out.println("Задание в конце урока");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите число:");
+        if (scanner.hasNextInt()) {
+            int num = scanner.nextInt();
+            if (num % 2 == 0) {
+                System.out.println("Число четное");
+            } else {
+                System.out.println("Число нечетное");
+            }
+        } else {
+            System.out.println("Введено не число");
+        }
+    }
+
+    static void printSum(int x, int y) {
+        int z = (x + y);
+        System.out.println(z);
+    }
+}
