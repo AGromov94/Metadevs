@@ -1,15 +1,14 @@
-package OOP;
+package ru.metadevs.andrew.OOP;
 
 public class Worker implements Employee {
     private String name;
     private int age;
-    private double salary;
+    private int salary;
     private String placeOfWork;
 
-    public Worker(String name, int age, double salary) {
+    public Worker(String name, int age) {
         this.name = name;
         this.age = age;
-        this.salary = salary;
     }
 
     //region getters/setters
@@ -17,23 +16,15 @@ public class Worker implements Employee {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
@@ -44,14 +35,11 @@ public class Worker implements Employee {
     public void setPlaceOfWork(String placeOfWork) {
         this.placeOfWork = placeOfWork;
     }
-    // endregion
+    //endregion
 
-    public boolean checkSalary() {
-        return salary > age;
-    }
-
-    public void salaryValidate() throws Exception {
-        if (checkSalary() == false) throw new Exception("Данные неверны");
+    @Override
+    public void salaryValidate(int salary) {
+        if (salary < age) throw new SalaryValidateException("Salary could not be lower than age");
     }
 
     @Override
@@ -59,6 +47,6 @@ public class Worker implements Employee {
         System.out.print("I'm a worker" + " ");
         System.out.print(this.name);
         System.out.print(" " + this.age + " ");
-        System.out.printf("%.2f", this.salary);
+        System.out.print(this.salary);
     }
 }
