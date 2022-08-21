@@ -20,7 +20,10 @@ public class Company implements IdealCompany {
         if (isEmployeeBelongsToCompany(employee)) {
             throw new EmployeeAlreadyExistsInCompanyException("This employee already exist in company");
         }
-        Employee[] hireArray = new Employee[employees.length + 1];
+
+        employee.salaryValidate(salary);
+        employee.setSalary(salary);
+
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] == null) {
                 employees[i] = employee;
@@ -29,8 +32,7 @@ public class Company implements IdealCompany {
         }
         employees = Arrays.copyOf(employees, employees.length + 1);
         employees[employees.length - 1] = employee;
-    }//Добавить проверку на SalaryValidate. Метод hire должен принимать salary на вход (интовый)
-    // После добавления сотрудника в компанию нужно установить ему зарплату и название компании.
+    }
 
     @Override
     public void fire(Employee employee) {
