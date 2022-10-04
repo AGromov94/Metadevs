@@ -1,6 +1,7 @@
 package ru.metadevs.andrew.OOP;
 
 import org.junit.jupiter.api.Test;
+import ru.metadevs.andrew.OOP.Company.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;

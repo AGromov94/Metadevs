@@ -1,4 +1,4 @@
-package ru.metadevs.andrew.OOP;
+package ru.metadevs.andrew.OOP.Company;
 
 public interface IdealCompany {
     void hire(AbstractEmployee worker, int salary);

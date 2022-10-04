@@ -1,4 +1,4 @@
-package ru.metadevs.andrew.OOP;
+package ru.metadevs.andrew.OOP.Company;
 
 import java.util.NoSuchElementException;
 
