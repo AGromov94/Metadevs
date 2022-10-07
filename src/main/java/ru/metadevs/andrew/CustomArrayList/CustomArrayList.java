@@ -7,7 +7,7 @@ import java.util.*;
 public class CustomArrayList<T> implements List<T> {
     private T[] arr;
     private int amountOfElements;
-    private final static int DEFAULT_CAPACITY = 10;
+    private final static int DEFAULT_CAPACITY = 100002;
 
     //конструктор класса CustomArrayList
     public CustomArrayList(T[] arr) {

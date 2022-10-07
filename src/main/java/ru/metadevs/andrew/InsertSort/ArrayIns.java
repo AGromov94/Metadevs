@@ -62,7 +62,7 @@ public class ArrayIns {
 
     public void bubbleSort() {
         int out, in, temp;
-        for (out = counterOfElements - 1; out > 1; out--) {
+        for (out = counterOfElements - 1; out >= 1; out--) {
             for (in = 0; in < out; in++) {
                 if (arr[in] > arr[in + 1]) {
                     temp = arr[in];
