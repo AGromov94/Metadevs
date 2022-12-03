@@ -8,37 +8,40 @@ public class MyStacksTest {
 
     @Test
     public void shouldPushElementOnTopOfStack() {
-        MyStack stack = new MyStack(5);
-        stack.pushElementOnTheTop(0);
-        stack.pushElementOnTheTop(1);
-        stack.pushElementOnTheTop(2);
-        stack.pushElementOnTheTop(3);
-        stack.pushElementOnTheTop(4);
+        MyStack<Integer> stack = new MyStack<Integer>(5);
+        Integer a = 1, b = 2, c = 3, d = 4, e = 5;
+        stack.pushElementOnTheTop(a);
+        stack.pushElementOnTheTop(b);
+        stack.pushElementOnTheTop(c);
+        stack.pushElementOnTheTop(d);
+        stack.pushElementOnTheTop(e);
 
-        assertEquals(stack.peekElementOfTheTop(), 4);
+        assertEquals(stack.peekElementOfTheTop(), e);
     }
 
     @Test
     public void shouldPopElementOnTopOfStack() {
-        MyStack stack = new MyStack(5);
-        stack.pushElementOnTheTop(0);
-        stack.pushElementOnTheTop(1);
-        stack.pushElementOnTheTop(2);
-        stack.pushElementOnTheTop(3);
-        stack.pushElementOnTheTop(4);
+        MyStack<Integer> stack = new MyStack<Integer>(5);
+        Integer a = 1, b = 2, c = 3, d = 4, e = 5;
+        stack.pushElementOnTheTop(a);
+        stack.pushElementOnTheTop(b);
+        stack.pushElementOnTheTop(c);
+        stack.pushElementOnTheTop(d);
+        stack.pushElementOnTheTop(e);
 
         stack.popElementOfTheTop();
-        assertEquals(stack.peekElementOfTheTop(), 3);
+        assertEquals(stack.peekElementOfTheTop(), d);
     }
 
     @Test
     public void checkThatStackIsNotEmpty() {
-        MyStack stack = new MyStack(5);
-        stack.pushElementOnTheTop(0);
-        stack.pushElementOnTheTop(1);
-        stack.pushElementOnTheTop(2);
-        stack.pushElementOnTheTop(3);
-        stack.pushElementOnTheTop(4);
+        MyStack<Integer> stack = new MyStack<Integer>(5);
+        Integer a = 1, b = 2, c = 3, d = 4, e = 5;
+        stack.pushElementOnTheTop(a);
+        stack.pushElementOnTheTop(b);
+        stack.pushElementOnTheTop(c);
+        stack.pushElementOnTheTop(d);
+        stack.pushElementOnTheTop(e);
 
         assertTrue(stack.isFull());
     }

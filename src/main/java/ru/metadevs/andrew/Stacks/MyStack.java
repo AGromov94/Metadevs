@@ -1,25 +1,25 @@
 package ru.metadevs.andrew.Stacks;
 
-public class MyStack {
+public class MyStack<T> implements IdealStack<T> {
     private int maxSize;
-    private long[] arr;
+    private T[] arr;
     private int top;
 
     public MyStack(int s) {
         maxSize = s;
-        arr = new long[maxSize];
+        arr = (T[]) new Object[maxSize];
         top = -1;
     }
 
-    public void pushElementOnTheTop(long element) {
+    public void pushElementOnTheTop(T element) {
         arr[++top] = element;
     }
 
-    public long popElementOfTheTop() {
+    public T popElementOfTheTop() {
         return arr[top--];
     }
 
-    public long peekElementOfTheTop() {
+    public T peekElementOfTheTop() {
         return arr[top];
     }
 
